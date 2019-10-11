@@ -51,3 +51,30 @@ module "network_acl" {
 
 
 }
+
+
+module "account" {
+  source       = "./modules/account"
+
+# Input parameters for Account configuration
+account_name      = "fi-mktg-dev"
+account_email     = "abc@sample.com"
+
+# Input parameters for Tagging
+	## Mandatory Tags
+org_unit          = "Marketing"
+app_id            = "ABCF-1234"
+app_functionality = "Web"
+env               = "development"
+project_name      = "digitalization"
+build_version     = "sample"
+
+	## Optional Tags
+app_lifecycle     = "invest"
+cost_center       = "12345678"
+sys_owner         = "mgr-name"
+app_with_pii      = "N"
+app_with_pci      = "N"
+data_class_tier   = "confidential"
+
+}
